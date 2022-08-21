@@ -1,0 +1,48 @@
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 25rem;
+}
+.container-bar-reloj{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+
+}
+.container-bar-reloj p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.container-reloj{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.reloj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid rgb(127, 236, 113);
+    box-shadow: 2px 2px 15px 2px greenyellow;
+    border-radius: 160px;
+    width: 19rem;
+    height: 19rem;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+}
+.container-boton{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.container-boton button{
+    width: 13rem;
+    height: 3rem;
+}
