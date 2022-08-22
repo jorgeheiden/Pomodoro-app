@@ -40,9 +40,24 @@
 .container-boton{
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 .container-boton button{
     width: 13rem;
     height: 3rem;
+    //
+    color: #ffffff;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #1b1a1a;
+    border: 1px solid #535353;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #485348,
+             -6px -6px 12px #646d65;
+}
+.container-boton button:active{
+    color: #666;
+ box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
 }

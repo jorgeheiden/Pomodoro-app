@@ -18,6 +18,7 @@ export class RelojComponent implements OnInit {
   minutos = 25
   starStop = false
   btn = "inicio"
+  msjConfirm!:any
   cuentaRegresiva(){
     if(this.segundos == "00"){
       this.segundos = 59
@@ -38,7 +39,7 @@ export class RelojComponent implements OnInit {
     },1000)
   }
 
-  inicarConteo(){
+  iniciarConteo(){
     setTimeout( () => {
       this.cuentaRegresiva()
     }, 1000)
@@ -53,7 +54,7 @@ export class RelojComponent implements OnInit {
 
   iniciarParar(){
     if(this.starStop == false){
-      this.inicarConteo()
+      this.iniciarConteo()
     }
     else{
       this.pararConteo()
@@ -62,21 +63,52 @@ export class RelojComponent implements OnInit {
   
   //Pomodoro
   pomodoro(){
-    this.segundos = "00"
-    this.minutos = 25
-    this.pararConteo()
-  }
-  //Descanso
-  descanso(){
-    this.segundos = "00"
-    this.minutos = 5
-    this.pararConteo()
+    if(this.starStop == true){
+      this.msjConfirm = confirm("Reloj corriendo, Quieres cambiar?")
+      if(this.msjConfirm == true){
+        this.segundos = "00"
+        this.minutos = 25
+        this.pararConteo()
+      }
+    }
+    else{
+      this.segundos = "00"
+      this.minutos = 25
+    }
     
+  }
+  //Descanso Corto
+  descanso(){
+    if(this.starStop == true){
+      this.msjConfirm = confirm("Reloj corriendo, Quieres cambiar?")
+      if(this.msjConfirm == true){
+        this.segundos = "00"
+        this.minutos = 5
+        this.pararConteo()
+      }
+    }
+    else{
+      this.segundos = "00"
+      this.minutos = 5
+    }
   }
   //Descanso Largo
   descansoLargo(){
-    this.minutos = 15
+    if(this.starStop == true){
+      this.msjConfirm = confirm("Reloj corriendo, Quieres cambiar?")
+      if(this.msjConfirm == true){
+        this.segundos = "00"
+        this.minutos = 15
+        this.pararConteo()
+      }
+    }
+    else{
+      this.segundos = "00"
+      this.minutos = 15
+    }
   }
+
+
   /*
   reloj(){
     setInterval( () => {
