@@ -4,16 +4,27 @@
     </div>
     <div class="contenedor-list">
         <ul>
-            <li>
-                <label class="container">
-                    <input checked="checked" type="checkbox">
-                    <div class="checkmark"></div>
-                </label>
-                <p>Tarea 1</p>
+            <li *ngFor="let tarea of tareas">
+                <div class="contenedor-checkTarea">
+                    <label class="container">
+                        <input checked="checked" type="checkbox">
+                        <div class="checkmark"></div>
+                    </label>
+                    <p>{{tarea}}</p>
+                </div>
+                <img class="iconoDelete" (click)="eliminarTarea(tarea)" src="../../../assets/imagenes/icons8-delete-90.png" alt="">
             </li>
         </ul>
-        <div class="contenedor-agregarTarea">
+        <div class="contenedor-agregarTarea" (click)="Agregar()" [ngClass]="{'oculatarAgregarTareas': claseOcultarAgregarTarea}">
+            <img src="../../../assets/imagenes/icons8-plus-100.png" alt="">
             <p>Agregar Tarea</p>
+        </div>
+        <div class="contenedor-editarTarea" [ngClass]="{'ocularEditarTareas': claseOcultarEditarTarea}">
+            <input type="text" placeholder="Escribe una tarea..." #tarea>
+            <div>
+                <button (click)="aceptar(tarea.value); tarea.value = '' ">Aceptar</button>
+                <button (click)="cancelar()">Cancelar</button>
+            </div>
         </div>
     </div>
 </div>

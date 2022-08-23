@@ -11,6 +11,7 @@
 .contenedor-list li{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     list-style-type: none;
     color: white;
     width: 23rem;
@@ -25,10 +26,20 @@
              -5px -5px 15px rgba(94, 119, 98, 0.842);
     
 }
+.iconoDelete{
+    width: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.contenedor-checkTarea{
+    display: flex;
+    align-items: center;
+}
+.contenedor-checkTarea p{
+    margin-left: 2rem;
+}
 .contenedor-list input{
     margin-right: 1rem;
-    
-   
 }
 
 .container input {
@@ -47,7 +58,7 @@
     width: 23rem;
     height: 3.5rem;
     margin: 2rem 0 1rem 0;
-    padding-left: 1.5rem;
+    
 
     border-radius: 10px;
     background: #0c0c0c;
@@ -55,9 +66,64 @@
              //-5px -5px 15px rgb(60, 60, 60);
              -5px -5px 15px rgba(92, 114, 96, 0.733);
    }
+   .contenedor-agregarTarea img{
+    width: 2rem;
+    margin-right: 1rem;
+    margin-left: 3rem;
+   }
+   .oculatarAgregarTareas{
+    display: none;
+   }
+   .contenedor-editarTarea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(206, 199, 199);
+    width: 23rem;
+    height: 6.5rem;
+    margin: 2rem 0 1rem 0;
+    border-radius: 10px;
+    background: #141414;
+    box-shadow: 5px 5px 15px rgb(25, 25, 25),
+             //-5px -5px 15px rgb(60, 60, 60);
+             -5px -5px 15px rgba(92, 114, 96, 0.733);
+   }
+   .contenedor-editarTarea input{
+    width: 18rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(202, 197, 197);
+   }
+   .contenedor-editarTarea div{
+    margin-right: 1rem;
+   }
+   .contenedor-editarTarea button{
+    width: 7rem;
+    height: 1.8rem;
+    margin: 0.8rem 1.5rem 0 1.5rem;
 
-
-
+    color: #ffffff;
+    padding: 0.7em 1.7em;
+    font-size: 0.72rem;
+    border-radius: 2em;
+    background: #141414;
+    border: 1px solid #272727;
+    transition: all .3s;
+    box-shadow: 2px 2px 3px #485348,
+             -2px -2px 3px #646d65;
+}
+.contenedor-editarTarea button:active{
+    color: #666;
+ box-shadow: inset 1px 1px 5px #b4beb1,
+             inset -1px -1px 5px #e9fdef;
+}
+.ocularEditarTareas{
+    display: none;
+}
 
    .container {
     display: block;

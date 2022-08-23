@@ -107,24 +107,5 @@ export class RelojComponent implements OnInit {
       this.minutos = 15
     }
   }
-
-
-  /*
-  reloj(){
-    setInterval( () => {
-  this.fecha = new Date()
-  this.hora = this.fecha.getHours()
-  this.minuto = this.fecha.getMinutes()
-  this.segundo = this.fecha.getSeconds()
-  this.milisegundo = this.fecha.getMilliseconds()
-      if(this.segundo != this.segundo){
-        
-      }
-
-    },200)
-  
-  }
-*/
-
 }
 
