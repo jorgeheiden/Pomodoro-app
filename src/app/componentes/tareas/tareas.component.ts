@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,31 +8,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TareasComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+   }
   claseOcultarAgregarTarea = false
   claseOcultarEditarTarea = true
+  //Se crea un array al cual se le insertan objetos con los datos necesarios
   tareas:any = []
+  valor = true
+  checkValor!:any
+  localStorageValues!:any
+
   ngOnInit(): void {
+    this.tareas = localStorage.getItem("tasks")
+    console.log(this.tareas)
+    this.tareas = JSON.parse(this.tareas)
+
   }
 
   Agregar(){
     this.claseOcultarAgregarTarea = true
     this.claseOcultarEditarTarea = false
   }
-  aceptar(data:any){
+  aceptar(tarea:any){
     this.claseOcultarAgregarTarea = false
     this.claseOcultarEditarTarea = true
-    this.tareas.push(data)
-    console.log(this.tareas)
+    /*************** ****************/
+    this.tareas.push({'tarea': tarea, "checkValor": false})
+    /************** *****************/
+    localStorage.setItem("tasks", JSON.stringify(this.tareas))
+    
   }
   cancelar(){
     this.claseOcultarEditarTarea = true
     this.claseOcultarAgregarTarea = false
+
+   
   }
   eliminarTarea(data:any){
     let indice = this.tareas.indexOf(data)
     this.tareas.splice(indice, 1)
-    console.log(this.tareas)
+    localStorage.setItem("tasks", JSON.stringify(this.tareas))
+  }
+  //
+  tacharTarea(tarea:any, evento:any){
+    this.checkValor = evento.target.checked
+    this.tareas[this.tareas.indexOf(tarea)].checkValor = this.checkValor
+    localStorage.setItem("tasks", JSON.stringify(this.tareas))
   }
 
 }
