@@ -37,6 +37,10 @@
     font-weight: 600;
     font-size: 5rem;
 }
+.cambiarBorde{
+    border: 15px solid rgb(2, 82, 255);
+    box-shadow: 2px 2px 15px 2px rgb(68, 68, 236);
+}
 .container-boton{
     display: flex;
     justify-content: center;

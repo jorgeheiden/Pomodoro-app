@@ -19,6 +19,7 @@ export class TareasComponent implements OnInit {
   checkValor!:any
   localStorageValues!:any
   obtenerLocalStorage:any
+  
   ngOnInit(): void {
 
     this.obtenerLocalStorage = localStorage.getItem("tasks")
@@ -41,7 +42,7 @@ export class TareasComponent implements OnInit {
   cancelar(){
     this.claseOcultarEditarTarea = true
     this.claseOcultarAgregarTarea = false
-
+    
    
   }
   eliminarTarea(data:any){

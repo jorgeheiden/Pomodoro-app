@@ -1,9 +1,8 @@
-<div class="container">
-    <div class="container-titulo">
+<div class="container" [ngClass]="{'colorSombra': (cambioColor$ | async)}" >
+    <div class="container-titulo" >
         <p>Pomodoro</p>
     </div>
-    <div class="container-light-mode">
-        <img src="../../../assets/imagenes/moon-white.png" alt="">
-        <p>Light Mode</p>
+    <div class="container-hora">
+        <p>{{hora}}:{{minutos}}:{{segundos}} {{amPm}}</p>
     </div>
 </div>

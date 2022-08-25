@@ -1,4 +1,5 @@
 import { Component, OnInit, Query } from '@angular/core';
+import { ServiceService } from 'src/app/servicios/service.service';
 
 @Component({
   selector: 'app-reloj',
@@ -7,7 +8,7 @@ import { Component, OnInit, Query } from '@angular/core';
 })
 export class RelojComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicio:ServiceService) { }
 
   ngOnInit(): void {
    
@@ -19,6 +20,7 @@ export class RelojComponent implements OnInit {
   starStop = false
   btn = "inicio"
   msjConfirm!:any
+  borde = false
   cuentaRegresiva(){
     if(this.segundos == "00"){
       this.segundos = 59
@@ -35,6 +37,17 @@ export class RelojComponent implements OnInit {
         this.segundos = "00"
         this.iniciarParar()
       }
+      if(this.segundos == 0 && this.minutos == 0){
+        this.playAudio()
+        setTimeout( () => {
+          alert("Finalizado!")
+        }, 500)
+        this.pararConteo()
+        this.segundos = "00"
+        this.minutos = 5
+        this.borde = true
+        this.servicio.setCambioColorValor = true
+      }
       
     },1000)
   }
@@ -45,6 +58,7 @@ export class RelojComponent implements OnInit {
     }, 1000)
     this.starStop = true
     this.btn = "Parar"
+    
   }
   pararConteo(){
     clearInterval(this.intervalId)
@@ -69,13 +83,16 @@ export class RelojComponent implements OnInit {
         this.segundos = "00"
         this.minutos = 25
         this.pararConteo()
+        this.borde = true
+        this.servicio.setCambioColorValor = true
       }
     }
     else{
       this.segundos = "00"
       this.minutos = 25
     }
-    
+    this.borde = false
+    this.servicio.setCambioColorValor = false
   }
   //Descanso Corto
   descanso(){
@@ -85,12 +102,17 @@ export class RelojComponent implements OnInit {
         this.segundos = "00"
         this.minutos = 5
         this.pararConteo()
+        this.borde = true
+        this.servicio.setCambioColorValor = true
       }
     }
     else{
       this.segundos = "00"
       this.minutos = 5
+      this.borde = true
+      this.servicio.setCambioColorValor = true
     }
+    
   }
   //Descanso Largo
   descansoLargo(){
@@ -100,12 +122,22 @@ export class RelojComponent implements OnInit {
         this.segundos = "00"
         this.minutos = 15
         this.pararConteo()
+        this.borde = true
+        this.servicio.setCambioColorValor = true
       }
     }
     else{
       this.segundos = "00"
       this.minutos = 15
+      this.borde = true
+      this.servicio.setCambioColorValor = true
     }
+  }
+  playAudio(){
+    let audio = new Audio()
+    audio.src = "../../../assets/audio/mixkit-racing-countdown-timer-1051.wav"
+    audio.load()
+    audio.play()
   }
 }
 
