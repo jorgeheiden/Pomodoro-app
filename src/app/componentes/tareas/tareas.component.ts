@@ -23,6 +23,9 @@ export class TareasComponent implements OnInit {
   ngOnInit(): void {
 
    this.obtenerLocalStorage = localStorage.getItem("tasks")
+   //Si el localStorage no tiene ningun valor almacenado se le asigna
+   //un array vacio a la propiedad this.tareas y de esa manera se evita 
+   //un error por no tener ningun valor asignado
     this.tareas = JSON.parse(this.obtenerLocalStorage || '[]')
     console.log(this.obtenerLocalStorage)
     console.log(this.tareas)
