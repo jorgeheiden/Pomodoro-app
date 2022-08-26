@@ -8,6 +8,7 @@ import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { RelojComponent } from './componentes/reloj/reloj.component';
 import { TareasComponent } from './componentes/tareas/tareas.component';
 import { FormsModule } from '@angular/forms';
+import { InformacionComponent } from './componentes/informacion/informacion.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavBarComponent,
     RelojComponent,
-    TareasComponent
+    TareasComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,
