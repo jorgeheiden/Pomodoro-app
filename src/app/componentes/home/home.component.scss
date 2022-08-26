@@ -9,3 +9,27 @@
     margin-top: 3rem;
     width: 100%;
 }
+app-tareas{
+    width: 50%;
+    
+}
+app-reloj{
+    width: 50%;
+    
+}
+
+@media screen and (max-width: 1024px){
+    .contenedor-home-reloj-tareas{
+        flex-direction: column; 
+    }
+    app-reloj{
+        width: 100%;
+    }
+    app-tareas{
+        width: 100%;
+        
+    }
+    @media screen and (max-width: 576px){
+        
+    }
+}

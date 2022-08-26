@@ -22,9 +22,10 @@ export class TareasComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.obtenerLocalStorage = localStorage.getItem("tasks")
+   this.obtenerLocalStorage = localStorage.getItem("tasks")
     this.tareas = JSON.parse(this.obtenerLocalStorage)
-    
+    console.log(this.obtenerLocalStorage)
+    console.log(this.tareas)
   }
 
   Agregar(){
@@ -38,6 +39,11 @@ export class TareasComponent implements OnInit {
     this.tareas.push({'tarea': tarea, "checkValor": false})
     /************** *****************/
     localStorage.setItem("tasks", JSON.stringify(this.tareas))
+
+    this.obtenerLocalStorage = localStorage.getItem("tasks")
+    this.tareas = JSON.parse(this.obtenerLocalStorage)
+
+
   }
   cancelar(){
     this.claseOcultarEditarTarea = true

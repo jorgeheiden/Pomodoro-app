@@ -3,8 +3,8 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 40rem;
-    height: 25rem;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 .container-bar-reloj{
     display: flex;
@@ -17,6 +17,15 @@
     font-weight: 400;
     font-size: 1.5rem;
     cursor: pointer;
+}
+.bordeVerde{
+    border-bottom: 1px solid green;
+}
+.bordeAzul{
+    border-bottom: 1px solid blue;
+}
+.bordeAzul2{
+    border-bottom: 1px solid blue;
 }
 .container-reloj{
     display: flex;
@@ -65,4 +74,11 @@
     color: #666;
  box-shadow: inset 4px 4px 12px #b4beb1,
              inset -4px -4px 12px #e9fdef;
+}
+
+@media screen and (max-width: 576px){
+    .container-bar-reloj p{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 }

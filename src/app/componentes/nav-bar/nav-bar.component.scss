@@ -36,3 +36,9 @@
     height: 1.3rem;
     margin-right: 0.5rem;
 }
+@media screen and (max-width: 576px){
+    .container-titulo{
+        font-size: 1.4rem;
+        margin-left: 1rem;
+    }
+}

@@ -21,7 +21,7 @@
         </div>
         <div class="contenedor-editarTarea" [ngClass]="{'ocularEditarTareas': claseOcultarEditarTarea}">
             <input type="text" placeholder="Escribe una tarea..." #tarea>
-            <div>
+            <div class="contenedor-btn">
                 <button (click)="aceptar(tarea.value); tarea.value = '' ">Aceptar</button>
                 <button (click)="cancelar()">Cancelar</button>
             </div>

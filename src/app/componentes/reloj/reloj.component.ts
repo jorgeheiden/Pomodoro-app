@@ -21,6 +21,9 @@ export class RelojComponent implements OnInit {
   btn = "inicio"
   msjConfirm!:any
   borde = false
+  bordeVerde = true
+  bordeAzul = false
+  bordeAzul2 = false
   cuentaRegresiva(){
     if(this.segundos == "00"){
       this.segundos = 59
@@ -84,7 +87,9 @@ export class RelojComponent implements OnInit {
         this.minutos = 25
         this.pararConteo()
         this.borde = true
-        this.servicio.setCambioColorValor = true
+        this.bordeAzul = false
+        this.bordeAzul2 = false
+        this.servicio.setCambioColorValor = false
       }
     }
     else{
@@ -92,6 +97,9 @@ export class RelojComponent implements OnInit {
       this.minutos = 25
     }
     this.borde = false
+    this.bordeVerde = true
+    this.bordeAzul = false
+    this.bordeAzul2 = false
     this.servicio.setCambioColorValor = false
   }
   //Descanso Corto
@@ -103,6 +111,9 @@ export class RelojComponent implements OnInit {
         this.minutos = 5
         this.pararConteo()
         this.borde = true
+        this.bordeAzul = true
+        this.bordeAzul2 = false
+        this.bordeVerde = false
         this.servicio.setCambioColorValor = true
       }
     }
@@ -110,6 +121,9 @@ export class RelojComponent implements OnInit {
       this.segundos = "00"
       this.minutos = 5
       this.borde = true
+      this.bordeAzul = true
+      this.bordeAzul2 = false
+      this.bordeVerde = false
       this.servicio.setCambioColorValor = true
     }
     
@@ -123,6 +137,9 @@ export class RelojComponent implements OnInit {
         this.minutos = 15
         this.pararConteo()
         this.borde = true
+        this.bordeAzul2 = true
+        this.bordeAzul = false
+        this.bordeVerde = false
         this.servicio.setCambioColorValor = true
       }
     }
@@ -130,6 +147,9 @@ export class RelojComponent implements OnInit {
       this.segundos = "00"
       this.minutos = 15
       this.borde = true
+      this.bordeAzul2 = true
+      this.bordeAzul = false
+      this.bordeVerde = false
       this.servicio.setCambioColorValor = true
     }
   }
